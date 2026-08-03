@@ -3,33 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sri Raveena | Student Portfolio</title>
+  <title>Sri Raveena | ICT Student Portfolio</title>
   <style>
-    * { box-sizing: border-box; }
+    :root {
+      --ink: #14213d; --blue: #2563eb; --light: #f5f7ff;
+      --muted: #5b667a; --card: #ffffff;
+    }
+    * { box-sizing: border-box; scroll-behavior: smooth; }
     body {
-      margin: 0; font-family: Arial, sans-serif; color: #182230;
-      background: #f7f8fc; line-height: 1.6;
+      margin: 0; font-family: Arial, sans-serif; color: var(--ink);
+      background: var(--light); line-height: 1.6;
     }
     nav {
       display: flex; justify-content: space-between; align-items: center;
-      padding: 20px 10%; background: white;
+      padding: 20px max(7%, 24px); background: white;
+      border-bottom: 1px solid #e8ecf4;
     }
-    nav a { color: #182230; text-decoration: none; margin-left: 18px; }
-    .hero, section { max-width: 1000px; margin: auto; padding: 72px 10%; }
-    .hero { text-align: center; }
-    h1 { font-size: clamp(2.5rem, 7vw, 4.5rem); margin-bottom: 12px; }
-    h2 { font-size: 2rem; }
-    .tag { color: #526070; font-size: 1.15rem; }
+    nav a { color: var(--ink); text-decoration: none; margin-left: 18px; }
+    .hero {
+      padding: 90px max(7%, 24px); text-align: center;
+      background: linear-gradient(135deg, #eaf1ff, #f8faff);
+    }
+    .label { color: var(--blue); font-weight: bold; letter-spacing: .12em; font-size: .8rem; }
+    h1 { font-size: clamp(2.7rem, 8vw, 5.3rem); line-height: 1; margin: 15px 0; }
+    h2 { font-size: 2rem; margin-top: 0; }
+    .intro { color: var(--muted); font-size: 1.2rem; max-width: 700px; margin: auto; }
     .button {
-      display: inline-block; margin-top: 20px; padding: 12px 20px;
-      background: #2563eb; color: white; border-radius: 8px; text-decoration: none;
+      display: inline-block; margin-top: 26px; padding: 13px 22px; border-radius: 8px;
+      background: var(--blue); color: white; font-weight: bold; text-decoration: none;
     }
-    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; }
+    section { max-width: 1050px; margin: auto; padding: 68px max(7%, 24px); }
+    .grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+    }
     .card {
-      background: white; padding: 24px; border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0,0,0,.06);
+      background: var(--card); padding: 24px; border: 1px solid #e6eaf2;
+      border-radius: 12px; box-shadow: 0 5px 18px rgba(20,33,61,.05);
     }
-    footer { text-align: center; padding: 30px; background: #182230; color: white; }
+    .card h3 { margin-top: 0; }
+    .tags { display: flex; flex-wrap: wrap; gap: 10px; }
+    .tag {
+      background: #e9efff; color: #1744a5; padding: 7px 11px;
+      border-radius: 999px; font-size: .92rem;
+    }
+    #contact { text-align: center; }
+    #contact a { color: var(--blue); font-weight: bold; }
+    footer { padding: 28px; background: var(--ink); color: white; text-align: center; }
   </style>
 </head>
 <body>
@@ -37,49 +57,77 @@
     <strong>Sri Raveena</strong>
     <div>
       <a href="#about">About</a>
-      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
 
   <main>
     <section class="hero">
-      <p>STUDENT PORTFOLIO</p>
+      <p class="label">ICT STUDENT · GRADUATING 2029</p>
       <h1>Hi, I’m Sri Raveena.</h1>
-      <p class="tag">A student building skills, projects, and experience for internship opportunities.</p>
-      <a class="button" href="#projects">View my projects</a>
+      <p class="intro">
+        An Information and Communication Technology student at SUSS,
+        building practical skills in software, data, cloud, and hardware prototyping.
+      </p>
+      <a class="button" href="#experience">Explore my profile</a>
     </section>
 
     <section id="about">
       <h2>About me</h2>
       <p>
-        I am a student interested in learning, creating practical projects,
-        and gaining real-world experience through internships.
+        I am pursuing Information and Communication Technology at the Singapore
+        University of Social Sciences (SUSS). I am seeking internship opportunities
+        where I can learn from real projects, contribute thoughtfully, and grow my
+        technical skills.
       </p>
+
+      <h3>Technical skills</h3>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">C#</span>
+        <span class="tag">Dart</span>
+        <span class="tag">pandas</span>
+        <span class="tag">Arduino</span>
+        <span class="tag">Breadboarding</span>
+        <span class="tag">AWS fundamentals</span>
+        <span class="tag">Networking / CCNA</span>
+      </div>
     </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="projects">
+    <section id="experience">
+      <h2>Learning & involvement</h2>
+      <div class="grid">
         <article class="card">
-          <h3>Project One</h3>
-          <p>Add your first project, coursework, or assignment here.</p>
+          <h3>National AI Student Challenge 2026</h3>
+          <p>Participant in the Certis Track, developing interest and experience in applied AI challenges.</p>
         </article>
         <article class="card">
-          <h3>Project Two</h3>
-          <p>Add another project or achievement here.</p>
+          <h3>ICT Interest Group</h3>
+          <p>Active member exploring technology topics and connecting with other ICT students.</p>
         </article>
         <article class="card">
-          <h3>Currently learning</h3>
-          <p>Add the tools, subjects, or skills you are currently studying.</p>
+          <h3>Certifications</h3>
+          <p>Google AI Professional Certificate, AWS-related learning, CCNA learning, and LinkedIn Learning certificates.</p>
         </article>
       </div>
     </section>
 
+    <section>
+      <h2>Projects</h2>
+      <p>
+        I am currently developing portfolio projects. This section will be updated
+        with my coursework, programming, data, and Arduino projects.
+      </p>
+    </section>
+
     <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: add-your-email-here</p>
-      <p>GitHub: <a href="https://github.com/srirav05">github.com/srirav05</a></p>
+      <h2>Let’s connect</h2>
+      <p>
+        <a href="https://www.linkedin.com/in/sriraveena" target="_blank">LinkedIn</a>
+        &nbsp; · &nbsp;
+        <a href="https://github.com/srirav05" target="_blank">GitHub</a>
+      </p>
     </section>
   </main>
 
