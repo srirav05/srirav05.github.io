@@ -1,1 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sri Raveena | Student Portfolio</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: Arial, sans-serif; color: #182230;
+      background: #f7f8fc; line-height: 1.6;
+    }
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 10%; background: white;
+    }
+    nav a { color: #182230; text-decoration: none; margin-left: 18px; }
+    .hero, section { max-width: 1000px; margin: auto; padding: 72px 10%; }
+    .hero { text-align: center; }
+    h1 { font-size: clamp(2.5rem, 7vw, 4.5rem); margin-bottom: 12px; }
+    h2 { font-size: 2rem; }
+    .tag { color: #526070; font-size: 1.15rem; }
+    .button {
+      display: inline-block; margin-top: 20px; padding: 12px 20px;
+      background: #2563eb; color: white; border-radius: 8px; text-decoration: none;
+    }
+    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; }
+    .card {
+      background: white; padding: 24px; border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.06);
+    }
+    footer { text-align: center; padding: 30px; background: #182230; color: white; }
+  </style>
+</head>
+<body>
+  <nav>
+    <strong>Sri Raveena</strong>
+    <div>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 
+  <main>
+    <section class="hero">
+      <p>STUDENT PORTFOLIO</p>
+      <h1>Hi, I’m Sri Raveena.</h1>
+      <p class="tag">A student building skills, projects, and experience for internship opportunities.</p>
+      <a class="button" href="#projects">View my projects</a>
+    </section>
+
+    <section id="about">
+      <h2>About me</h2>
+      <p>
+        I am a student interested in learning, creating practical projects,
+        and gaining real-world experience through internships.
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects">
+        <article class="card">
+          <h3>Project One</h3>
+          <p>Add your first project, coursework, or assignment here.</p>
+        </article>
+        <article class="card">
+          <h3>Project Two</h3>
+          <p>Add another project or achievement here.</p>
+        </article>
+        <article class="card">
+          <h3>Currently learning</h3>
+          <p>Add the tools, subjects, or skills you are currently studying.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: add-your-email-here</p>
+      <p>GitHub: <a href="https://github.com/srirav05">github.com/srirav05</a></p>
+    </section>
+  </main>
+
+  <footer>© 2026 Sri Raveena</footer>
+</body>
+</html>
