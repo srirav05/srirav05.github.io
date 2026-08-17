@@ -7,75 +7,63 @@
 
   <style>
     :root {
-      --bg: #0b1020;
-      --surface: rgba(20, 29, 54, 0.72);
-      --text: #f6f8ff;
-      --muted: #b7c0d8;
-      --blue: #69a8ff;
-      --purple: #a78bfa;
-      --cyan: #5eead4;
-      --border: rgba(255, 255, 255, 0.12);
+      --ink: #18233f;
+      --muted: #5c6986;
+      --blue: #4361ee;
+      --purple: #8b5cf6;
+      --cyan: #14b8a6;
+      --light-blue: #eef4ff;
+      --surface: rgba(255, 255, 255, 0.78);
+      --border: rgba(67, 97, 238, 0.14);
       --max-width: 1120px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       overflow-x: hidden;
-      color: var(--text);
-      background: var(--bg);
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 10%, #dce9ff 0, transparent 30%),
+        radial-gradient(circle at 90% 35%, #eee3ff 0, transparent 32%),
+        #f8faff;
       font-family: Arial, sans-serif;
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-    }
-
-    /* Animated background circles */
     .orb {
       position: fixed;
       z-index: -1;
-      width: 460px;
-      height: 460px;
+      width: 380px;
+      height: 380px;
       border-radius: 50%;
-      filter: blur(80px);
-      opacity: 0.28;
+      filter: blur(65px);
+      opacity: 0.32;
       pointer-events: none;
-      animation: drift 13s ease-in-out infinite alternate;
+      animation: float 12s ease-in-out infinite alternate;
     }
 
     .orb-one {
-      top: -170px;
-      left: -110px;
-      background: #2563eb;
+      top: -130px;
+      left: -130px;
+      background: #83b6ff;
     }
 
     .orb-two {
-      top: 390px;
-      right: -160px;
-      background: #7c3aed;
-      animation-delay: -5s;
+      top: 480px;
+      right: -130px;
+      background: #c7a7ff;
+      animation-delay: -4s;
     }
 
-    @keyframes drift {
-      from {
-        transform: translate(0, 0) scale(1);
-      }
-
-      to {
-        transform: translate(70px, 55px) scale(1.18);
-      }
+    @keyframes float {
+      from { transform: translate(0, 0) scale(1); }
+      to { transform: translate(55px, 45px) scale(1.16); }
     }
 
-    /* Navigation bar */
     nav {
       position: sticky;
       top: 0;
@@ -83,22 +71,20 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 100%;
       padding: 18px max(6%, 24px);
       border-bottom: 1px solid var(--border);
-      background: rgba(11, 16, 32, 0.76);
+      background: rgba(248, 250, 255, 0.82);
       backdrop-filter: blur(14px);
     }
 
     .logo {
+      color: var(--ink);
       font-weight: 800;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.04em;
       text-decoration: none;
     }
 
-    .logo span {
-      color: var(--blue);
-    }
+    .logo span { color: var(--blue); }
 
     .nav-links {
       display: flex;
@@ -111,67 +97,63 @@
     .nav-links a {
       color: var(--muted);
       font-size: 0.94rem;
+      font-weight: 600;
       text-decoration: none;
       transition: color 0.2s ease;
     }
 
-    .nav-links a:hover {
-      color: var(--text);
-    }
+    .nav-links a:hover { color: var(--blue); }
 
     .container {
       width: min(var(--max-width), calc(100% - 48px));
       margin: 0 auto;
     }
 
-    /* Hero section */
+    section { padding: 88px 0; }
+
     .hero {
       display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
+      grid-template-columns: 1.2fr 0.8fr;
       align-items: center;
-      gap: 60px;
-      min-height: 82vh;
-      padding: 85px 0;
+      gap: 64px;
+      min-height: 80vh;
     }
 
     .eyebrow {
-      margin: 0 0 18px;
-      color: var(--cyan);
+      margin: 0 0 16px;
+      color: var(--blue);
       font-size: 0.8rem;
       font-weight: 800;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.14em;
     }
 
-    h1, h2, h3, p {
-      margin-top: 0;
-    }
+    h1, h2, h3, p { margin-top: 0; }
 
     h1 {
-      max-width: 760px;
       margin-bottom: 22px;
-      font-size: clamp(3.2rem, 8vw, 6.6rem);
-      line-height: 0.97;
+      font-size: clamp(3.2rem, 8vw, 6.3rem);
+      line-height: 0.98;
       letter-spacing: -0.07em;
     }
 
     .gradient-text {
-      background: linear-gradient(100deg, var(--blue), var(--cyan), var(--purple));
+      background: linear-gradient(100deg, var(--blue), var(--purple), var(--cyan));
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
     }
 
     .intro {
-      max-width: 640px;
+      max-width: 650px;
       color: var(--muted);
-      font-size: 1.16rem;
+      font-size: 1.15rem;
     }
 
     .actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 32px;
+      margin-top: 30px;
     }
 
     .button {
@@ -186,87 +168,68 @@
 
     .button:hover {
       transform: translateY(-3px);
-      box-shadow: 0 10px 24px rgba(76, 132, 255, 0.25);
+      box-shadow: 0 10px 22px rgba(67, 97, 238, 0.2);
     }
 
     .button-primary {
-      color: #07101f;
-      background: linear-gradient(120deg, var(--blue), var(--cyan));
+      color: white;
+      background: linear-gradient(120deg, var(--blue), var(--purple));
     }
 
     .button-secondary {
       border-color: var(--border);
-      background: rgba(255, 255, 255, 0.04);
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.66);
     }
 
-    .hero-card {
+    .photo-card {
       position: relative;
-      display: grid;
-      place-items: center;
+      width: min(100%, 360px);
       aspect-ratio: 1;
-      max-width: 360px;
       justify-self: end;
       overflow: hidden;
-      border: 1px solid var(--border);
-      border-radius: 28px;
-      background: linear-gradient(145deg, #223461, #111a31);
-      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.28);
+      border: 8px solid rgba(255, 255, 255, 0.76);
+      border-radius: 32px;
+      background: linear-gradient(135deg, #a7c7ff, #d9c4ff);
+      box-shadow: 0 24px 55px rgba(64, 83, 150, 0.23);
+      animation: photo-float 4s ease-in-out infinite;
     }
 
-    .hero-card::before {
+    @keyframes photo-float {
+      50% { transform: translateY(-10px); }
+    }
+
+    .profile-photo {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .photo-label {
       position: absolute;
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(105, 168, 255, 0.62), transparent 65%);
-      content: "";
-      animation: pulse 4s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      50% {
-        transform: scale(1.26);
-        opacity: 0.55;
-      }
-    }
-
-    .monogram {
-      z-index: 1;
-      display: grid;
-      place-items: center;
-      width: 160px;
-      height: 160px;
-      border: 1px solid rgba(255, 255, 255, 0.24);
-      border-radius: 50%;
-      background: rgba(11, 16, 32, 0.48);
-      font-size: 3.7rem;
-      font-weight: 800;
-      letter-spacing: -0.08em;
-      backdrop-filter: blur(8px);
-    }
-
-    .hero-card p {
-      position: absolute;
-      bottom: 25px;
+      right: 16px;
+      bottom: 16px;
       margin: 0;
-      color: var(--muted);
-      font-size: 0.88rem;
-    }
-
-    /* General sections */
-    section {
-      padding: 92px 0;
+      padding: 7px 11px;
+      border-radius: 999px;
+      color: white;
+      background: rgba(24, 35, 63, 0.72);
+      font-size: 0.8rem;
+      font-weight: 700;
+      backdrop-filter: blur(6px);
     }
 
     .section-heading {
-      max-width: 660px;
-      margin-bottom: 40px;
+      max-width: 680px;
+      margin-bottom: 38px;
     }
 
     .section-heading h2 {
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       font-size: clamp(2rem, 4vw, 3rem);
-      letter-spacing: -0.045em;
+      letter-spacing: -0.05em;
     }
 
     .section-heading p,
@@ -274,8 +237,7 @@
       color: var(--muted);
     }
 
-    .about-grid,
-    .project-grid {
+    .about-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
@@ -286,11 +248,10 @@
       border: 1px solid var(--border);
       border-radius: 18px;
       background: var(--surface);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-      backdrop-filter: blur(12px);
+      box-shadow: 0 12px 34px rgba(75, 93, 150, 0.08);
+      backdrop-filter: blur(10px);
     }
 
-    /* Skills */
     .tags {
       display: flex;
       flex-wrap: wrap;
@@ -300,54 +261,31 @@
 
     .tag {
       padding: 7px 11px;
-      border: 1px solid rgba(105, 168, 255, 0.23);
+      border: 1px solid rgba(67, 97, 238, 0.16);
       border-radius: 999px;
-      color: #dbeafe;
-      background: rgba(37, 99, 235, 0.13);
+      color: #31499d;
+      background: #edf2ff;
       font-size: 0.88rem;
       transition: transform 0.2s ease, background 0.2s ease;
     }
 
     .tag:hover {
       transform: translateY(-3px);
-      background: rgba(37, 99, 235, 0.3);
+      background: #dbe6ff;
     }
 
-    /* Projects */
-    .project-card {
-      transition: transform 0.25s ease, border-color 0.25s ease;
+    .empty-projects {
+      min-height: 160px;
+      border: 2px dashed rgba(67, 97, 238, 0.22);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.42);
     }
 
-    .project-card:hover {
-      transform: translateY(-7px);
-      border-color: rgba(105, 168, 255, 0.6);
-    }
-
-    .project-number {
-      color: var(--blue) !important;
-      font-size: 0.85rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-    }
-
-    .project-link {
-      display: inline-block;
-      margin-top: 14px;
-      color: var(--cyan);
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .project-link:hover {
-      text-decoration: underline;
-    }
-
-    /* Experience timeline */
     .timeline {
       max-width: 900px;
       margin-left: 8px;
       padding-left: 34px;
-      border-left: 1px solid rgba(105, 168, 255, 0.42);
+      border-left: 2px solid rgba(67, 97, 238, 0.22);
     }
 
     .timeline-item {
@@ -357,17 +295,18 @@
       border: 1px solid var(--border);
       border-radius: 18px;
       background: var(--surface);
+      box-shadow: 0 12px 34px rgba(75, 93, 150, 0.08);
     }
 
     .timeline-item::before {
       position: absolute;
       top: 31px;
-      left: -43px;
+      left: -44px;
       width: 16px;
       height: 16px;
-      border: 4px solid var(--bg);
+      border: 4px solid #f8faff;
       border-radius: 50%;
-      background: var(--cyan);
+      background: var(--blue);
       content: "";
     }
 
@@ -393,13 +332,13 @@
       color: var(--muted);
     }
 
-    /* Contact */
     .contact-panel {
-      padding: 50px 28px;
+      padding: 52px 28px;
       border: 1px solid var(--border);
       border-radius: 22px;
-      background: linear-gradient(135deg, rgba(37, 99, 235, 0.26), rgba(124, 58, 237, 0.24));
+      background: linear-gradient(135deg, #e6efff, #f2eaff);
       text-align: center;
+      box-shadow: 0 12px 34px rgba(75, 93, 150, 0.08);
     }
 
     .contact-panel h2 {
@@ -407,9 +346,7 @@
       font-size: clamp(2rem, 4vw, 3rem);
     }
 
-    .contact-panel p {
-      color: var(--muted);
-    }
+    .contact-panel p { color: var(--muted); }
 
     footer {
       padding: 28px 24px;
@@ -435,37 +372,26 @@
       }
     }
 
-    /* Mobile design */
     @media (max-width: 760px) {
-      .nav-links {
-        gap: 12px;
-      }
-
-      .nav-links a {
-        font-size: 0.82rem;
-      }
+      .nav-links { gap: 12px; }
+      .nav-links a { font-size: 0.8rem; }
 
       .hero {
         grid-template-columns: 1fr;
-        padding: 64px 0;
+        gap: 42px;
+        min-height: auto;
+        padding: 70px 0;
       }
 
-      .hero-card {
+      .photo-card {
         width: min(100%, 310px);
         justify-self: start;
       }
 
-      .about-grid,
-      .project-grid {
-        grid-template-columns: 1fr;
-      }
-
-      section {
-        padding: 66px 0;
-      }
+      .about-grid { grid-template-columns: 1fr; }
+      section { padding: 65px 0; }
     }
 
-    /* Respects visitors who prefer less animation */
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
         scroll-behavior: auto !important;
@@ -496,9 +422,7 @@
       <div class="reveal">
         <p class="eyebrow">ICT STUDENT · SUSS · GRADUATING 2029</p>
 
-        <h1>
-          Hi, I’m <span class="gradient-text">Sri Raveena.</span>
-        </h1>
+        <h1>Hi, I’m <span class="gradient-text">Sri Raveena.</span></h1>
 
         <p class="intro">
           An Information and Communication Technology student building practical
@@ -506,7 +430,7 @@
         </p>
 
         <div class="actions">
-          <a class="button button-primary" href="#projects">View my work</a>
+          <a class="button button-primary" href="#experience">View my experience</a>
 
           <a class="button button-secondary"
              href="https://www.linkedin.com/in/sriraveena"
@@ -517,9 +441,11 @@
         </div>
       </div>
 
-      <div class="hero-card reveal">
-        <div class="monogram">SR</div>
-        <p>Student · Builder · Learner</p>
+      <div class="photo-card reveal">
+        <img class="profile-photo"
+             src="profile.jpg"
+             alt="Portrait of Sri Raveena">
+        <p class="photo-label">Sri Raveena</p>
       </div>
     </section>
 
@@ -532,7 +458,6 @@
       <div class="about-grid">
         <article class="panel">
           <h3>My focus</h3>
-
           <p>
             I am pursuing Information and Communication Technology at the
             Singapore University of Social Sciences. I am seeking internship
@@ -560,54 +485,11 @@
 
     <section id="projects" class="reveal">
       <div class="section-heading">
-        <p class="eyebrow">FEATURED WORK</p>
-        <h2>Projects I’m building.</h2>
-        <p>
-          Each project is designed to show practical Python and
-          problem-solving skills.
-        </p>
+        <p class="eyebrow">PROJECTS</p>
+        <h2>My projects.</h2>
       </div>
 
-      <div class="project-grid">
-        <article class="panel project-card">
-          <p class="project-number">01 / IN DEVELOPMENT</p>
-          <h3>SentinelLog Analyzer</h3>
-
-          <p>
-            A Python tool that analyses sample network logs and flags repeated
-            failed login attempts from suspicious IP addresses.
-          </p>
-
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">CSV</span>
-            <span class="tag">Security</span>
-          </div>
-
-          <a class="project-link"
-             href="https://github.com/srirav05/sentinel-log-analyzer"
-             target="_blank"
-             rel="noopener">
-            View repository →
-          </a>
-        </article>
-
-        <article class="panel project-card">
-          <p class="project-number">02 / NEXT PROJECT</p>
-          <h3>More Python projects coming</h3>
-
-          <p>
-            I am developing a focused Python portfolio in data analysis,
-            backend development, and practical automation.
-          </p>
-
-          <div class="tags">
-            <span class="tag">pandas</span>
-            <span class="tag">APIs</span>
-            <span class="tag">Data</span>
-          </div>
-        </article>
-      </div>
+      <div class="empty-projects"></div>
     </section>
 
     <section id="experience" class="reveal">
