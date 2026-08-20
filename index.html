@@ -274,11 +274,64 @@
       background: #dbe6ff;
     }
 
-    .empty-projects {
-      min-height: 160px;
-      border: 2px dashed rgba(67, 97, 238, 0.22);
+    /* Project cards */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .project-card {
+      padding: 28px;
+      border: 1px solid var(--border);
       border-radius: 18px;
-      background: rgba(255, 255, 255, 0.42);
+      background: var(--surface);
+      box-shadow: 0 12px 34px rgba(75, 93, 150, 0.08);
+      backdrop-filter: blur(10px);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(75, 93, 150, 0.14);
+    }
+
+    .project-card h3 {
+      margin-bottom: 5px;
+      font-size: 1.35rem;
+    }
+
+    .project-type {
+      color: var(--blue);
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+    }
+
+    .project-card ul {
+      margin: 16px 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .project-tag {
+      padding: 5px 9px;
+      border-radius: 999px;
+      color: #31499d;
+      background: #edf2ff;
+      font-size: 0.78rem;
+      font-weight: 600;
     }
 
     .timeline {
@@ -332,6 +385,32 @@
       color: var(--muted);
     }
 
+    /* Two-column information cards */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .info-card {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--surface);
+      box-shadow: 0 12px 34px rgba(75, 93, 150, 0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .info-card h3 {
+      margin-bottom: 15px;
+    }
+
+    .info-card ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
     .contact-panel {
       padding: 52px 28px;
       border: 1px solid var(--border);
@@ -346,7 +425,9 @@
       font-size: clamp(2rem, 4vw, 3rem);
     }
 
-    .contact-panel p { color: var(--muted); }
+    .contact-panel p {
+      color: var(--muted);
+    }
 
     footer {
       padding: 28px 24px;
@@ -355,7 +436,6 @@
       text-align: center;
     }
 
-    /* CSS-only fade-up effect */
     .reveal {
       animation: reveal 0.8s ease both;
     }
@@ -388,7 +468,12 @@
         justify-self: start;
       }
 
-      .about-grid { grid-template-columns: 1fr; }
+      .about-grid,
+      .project-grid,
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
       section { padding: 65px 0; }
     }
 
@@ -403,6 +488,7 @@
 </head>
 
 <body>
+
   <div class="orb orb-one"></div>
   <div class="orb orb-two"></div>
 
@@ -413,155 +499,885 @@
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
   <main id="top" class="container">
-    <section class="hero">
-      <div class="reveal">
-        <p class="eyebrow">ICT STUDENT · SUSS · GRADUATING 2029</p>
 
-        <h1>Hi, I’m <span class="gradient-text">Sri Raveena.</span></h1>
+    <!-- HERO -->
+    <section class="hero">
+
+      <div class="reveal">
+
+        <p class="eyebrow">
+          ICT STUDENT · SUSS · GRADUATING 2029
+        </p>
+
+        <h1>
+          Hi, I’m <span class="gradient-text">Sri Raveena.</span>
+        </h1>
 
         <p class="intro">
-          An Information and Communication Technology student building practical
-          skills in Python, data, cloud, networking, and quality assurance.
+          An Information and Communication Technology student at the
+          Singapore University of Social Sciences, interested in software,
+          backend development, data, cloud technologies and building
+          practical solutions.
         </p>
 
         <div class="actions">
-          <a class="button button-primary" href="#experience">View my experience</a>
 
-          <a class="button button-secondary"
-             href="https://www.linkedin.com/in/sriraveena"
-             target="_blank"
-             rel="noopener">
-            Connect on LinkedIn
+          <a class="button button-primary" href="#projects">
+            View my projects
           </a>
-        </div>
-      </div>
 
-      <div class="photo-card reveal">
-        <img class="profile-photo"
-             src="profile.jpg"
-             alt="Portrait of Sri Raveena">
-        <p class="photo-label">Sri Raveena</p>
-      </div>
-    </section>
-
-    <section id="about" class="reveal">
-      <div class="section-heading">
-        <p class="eyebrow">ABOUT ME</p>
-        <h2>Learning by building useful things.</h2>
-      </div>
-
-      <div class="about-grid">
-        <article class="panel">
-          <h3>My focus</h3>
-          <p>
-            I am pursuing Information and Communication Technology at the
-            Singapore University of Social Sciences. I am seeking internship
-            opportunities where I can contribute, learn from real-world systems,
-            and grow as a technology professional.
-          </p>
-        </article>
-
-        <article class="panel">
-          <h3>Technical skills</h3>
-
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">C#</span>
-            <span class="tag">Dart</span>
-            <span class="tag">pandas</span>
-            <span class="tag">AWS fundamentals</span>
-            <span class="tag">Networking / CCNA</span>
-            <span class="tag">Software testing</span>
-            <span class="tag">GitHub</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="projects" class="reveal">
-      <div class="section-heading">
-        <p class="eyebrow">PROJECTS</p>
-        <h2>My projects.</h2>
-      </div>
-
-      <div class="empty-projects"></div>
-    </section>
-
-    <section id="experience" class="reveal">
-      <div class="section-heading">
-        <p class="eyebrow">EXPERIENCE</p>
-        <h2>Learning from real work.</h2>
-      </div>
-
-      <div class="timeline">
-        <article class="timeline-item">
-          <h3>Software Quality Assurance Engineer</h3>
-          <p class="company">Creative Technology Ltd</p>
-          <p class="date">4 March 2024 – 3 August 2024</p>
-
-          <ul>
-            <li>Designed and executed test cases for the Creative BT-W6 project, covering functional, integration, and reliability testing.</li>
-            <li>Performed manual testing across hardware and software interactions to identify bugs, edge cases, and performance issues.</li>
-            <li>Tested compatibility and usability across devices and setups to support a smooth user experience.</li>
-            <li>Supported performance, stress, regression, bug logging, and issue-tracking activities.</li>
-          </ul>
-        </article>
-
-        <article class="timeline-item">
-          <h3>Part-Time Retail Associate</h3>
-          <p class="company">Challenger</p>
-          <p class="date">1 September 2023 – Present</p>
-
-          <ul>
-            <li>Assisted customers in selecting IT products, including laptops and consoles, based on their needs.</li>
-            <li>Explained product features and specifications to help customers make informed decisions.</li>
-            <li>Maintained organised product displays and supported day-to-day customer enquiries.</li>
-          </ul>
-        </article>
-
-        <article class="timeline-item">
-          <h3>Activities & certifications</h3>
-          <p class="company">Continuous learning</p>
-
-          <ul>
-            <li>Participant, National AI Student Challenge 2026 — Certis Track.</li>
-            <li>Member, ICT Interest Group.</li>
-            <li>Google AI Professional Certificate, AWS-related learning, CCNA learning, and LinkedIn Learning certificates.</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section id="contact" class="reveal">
-      <div class="contact-panel">
-        <p class="eyebrow">LET’S CONNECT</p>
-        <h2>Open to learning opportunities.</h2>
-        <p>Feel free to view my work or connect with me professionally.</p>
-
-        <div class="actions" style="justify-content: center;">
-          <a class="button button-primary"
-             href="https://www.linkedin.com/in/sriraveena"
-             target="_blank"
-             rel="noopener">
+          <a
+            class="button button-secondary"
+            href="https://www.linkedin.com/in/sriraveena"
+            target="_blank"
+            rel="noopener">
             LinkedIn
           </a>
 
-          <a class="button button-secondary"
-             href="https://github.com/srirav05"
-             target="_blank"
-             rel="noopener">
+        </div>
+
+      </div>
+
+      <div class="photo-card reveal">
+
+        <img
+          class="profile-photo"
+          src="profile.jpg"
+          alt="Portrait of Sri Raveena">
+
+        <p class="photo-label">
+          Sri Raveena
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about" class="reveal">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          ABOUT ME
+        </p>
+
+        <h2>
+          Learning by building useful things.
+        </h2>
+
+        <p>
+          I am currently pursuing a Bachelor’s Degree in Information and
+          Communication Technology at the Singapore University of Social
+          Sciences. I enjoy working on practical technology projects and
+          exploring how software can solve real problems.
+        </p>
+
+      </div>
+
+
+      <div class="about-grid">
+
+        <article class="panel">
+
+          <h3>
+            My focus
+          </h3>
+
+          <p>
+            I am particularly interested in software and backend development,
+            where I can work with programming, databases, APIs and system
+            functionality. I am also developing my knowledge in data
+            analytics, artificial intelligence, cloud computing and networking.
+          </p>
+
+          <p>
+            My previous experience as a Software Quality Assurance Engineer
+            gave me exposure to real software development environments,
+            testing processes, debugging and working with engineers to
+            identify and resolve issues.
+          </p>
+
+        </article>
+
+
+        <article class="panel">
+
+          <h3>
+            Education
+          </h3>
+
+          <p>
+            <strong>Bachelor's Degree in Information and Communication Technology</strong><br>
+            Singapore University of Social Sciences<br>
+            2025 – 2029
+          </p>
+
+          <p>
+            <strong>Diploma in Electronics and Computer Engineering</strong><br>
+            Ngee Ann Polytechnic<br>
+            2022 – 2025
+          </p>
+
+          <p>
+            <strong>O-Level</strong><br>
+            Yishun Secondary School<br>
+            2018 – 2021
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section id="projects" class="reveal">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          PROJECTS
+        </p>
+
+        <h2>
+          Things I’ve built.
+        </h2>
+
+        <p>
+          A selection of university and personal projects where I apply
+          programming, data and problem-solving skills to practical use cases.
+        </p>
+
+      </div>
+
+
+      <div class="project-grid">
+
+
+        <!-- SUSS MODULE REVIEWS -->
+        <article class="project-card">
+
+          <h3>
+            SUSS Module Reviews
+          </h3>
+
+          <p class="project-type">
+            Web Application · Personal Project
+          </p>
+
+          <p>
+            A student-focused module review platform designed to make it
+            easier for SUSS students to explore modules and learn from
+            previous student experiences.
+          </p>
+
+          <ul>
+
+            <li>
+              Built a platform for students to browse and review SUSS modules.
+            </li>
+
+            <li>
+              Designed a structured database to store module information
+              and student reviews.
+            </li>
+
+            <li>
+              Implemented functionality for viewing modules and their
+              corresponding reviews.
+            </li>
+
+            <li>
+              Worked on the backend and database structure to manage
+              application data.
+            </li>
+
+            <li>
+              Designed the project around a real student problem and
+              focused on making academic information easier to access.
+            </li>
+
+            <li>
+              Used GitHub throughout development for project management
+              and version control.
+            </li>
+
+          </ul>
+
+          <div class="project-tags">
+
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Backend</span>
+            <span class="project-tag">Database</span>
+            <span class="project-tag">Web Development</span>
+            <span class="project-tag">GitHub</span>
+
+          </div>
+
+        </article>
+
+
+        <!-- LIBRARY -->
+        <article class="project-card">
+
+          <h3>
+            Library Management System
+          </h3>
+
+          <p class="project-type">
+            University Project · Python
+          </p>
+
+          <p>
+            A console-based Library Management System developed to apply
+            programming and data structure concepts.
+          </p>
+
+          <ul>
+
+            <li>
+              Developed the system using Python.
+            </li>
+
+            <li>
+              Implemented data structures to manage library records.
+            </li>
+
+            <li>
+              Added functionality for managing books and borrowing records.
+            </li>
+
+            <li>
+              Implemented book borrowing and return operations.
+            </li>
+
+            <li>
+              Applied programming logic and problem-solving techniques
+              to organise and retrieve information.
+            </li>
+
+          </ul>
+
+          <div class="project-tags">
+
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Data Structures</span>
+            <span class="project-tag">Programming</span>
+
+          </div>
+
+        </article>
+
+
+        <!-- AI CHALLENGE -->
+        <article class="project-card">
+
+          <h3>
+            AI Security Incident Assistant
+          </h3>
+
+          <p class="project-type">
+            National AI Student Challenge 2026 · Certis Track
+          </p>
+
+          <p>
+            Worked with a team to develop an AI-based system designed to
+            help security officers assess incidents and suggest appropriate
+            responses.
+          </p>
+
+          <ul>
+
+            <li>
+              Used Python to develop and test the solution.
+            </li>
+
+            <li>
+              Applied prompt engineering and model tuning techniques.
+            </li>
+
+            <li>
+              Designed the system to process information such as alerts,
+              logs and simulated scenarios.
+            </li>
+
+            <li>
+              Worked collaboratively on system development, testing and
+              refinement.
+            </li>
+
+            <li>
+              Presented the solution through a live demonstration and
+              supporting documentation.
+            </li>
+
+          </ul>
+
+          <div class="project-tags">
+
+            <span class="project-tag">Python</span>
+            <span class="project-tag">AI</span>
+            <span class="project-tag">Prompt Engineering</span>
+            <span class="project-tag">Team Project</span>
+
+          </div>
+
+        </article>
+
+
+        <!-- ELECTRONICS BACKGROUND -->
+        <article class="project-card">
+
+          <h3>
+            Electronics & IoT Projects
+          </h3>
+
+          <p class="project-type">
+            Ngee Ann Polytechnic · Hardware & IoT
+          </p>
+
+          <p>
+            Developed hands-on experience with microcontrollers, sensors,
+            electronics and IoT systems during my Diploma in Electronics
+            and Computer Engineering.
+          </p>
+
+          <ul>
+
+            <li>
+              Worked with Arduino UNO, ATmega328P and ESP32 boards.
+            </li>
+
+            <li>
+              Built sensor-based and IoT systems involving LEDs, buttons,
+              potentiometers and other components.
+            </li>
+
+            <li>
+              Worked with MQTT communication and IoT platforms.
+            </li>
+
+            <li>
+              Applied embedded programming and hardware troubleshooting.
+            </li>
+
+          </ul>
+
+          <div class="project-tags">
+
+            <span class="project-tag">Arduino</span>
+            <span class="project-tag">ESP32</span>
+            <span class="project-tag">IoT</span>
+            <span class="project-tag">MQTT</span>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="reveal">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          EXPERIENCE
+        </p>
+
+        <h2>
+          Learning from real work.
+        </h2>
+
+      </div>
+
+
+      <div class="timeline">
+
+
+        <!-- CREATIVE -->
+        <article class="timeline-item">
+
+          <h3>
+            Software Quality Assurance Engineer
+          </h3>
+
+          <p class="company">
+            Creative Technology Ltd
+          </p>
+
+          <p class="date">
+            4 March 2024 – 3 August 2024
+          </p>
+
+          <ul>
+
+            <li>
+              Assisted in designing and executing test cases for the
+              Creative BT-W6 project, covering functional, integration
+              and reliability testing.
+            </li>
+
+            <li>
+              Performed manual testing across hardware and software
+              interactions to identify bugs, edge cases and performance
+              issues.
+            </li>
+
+            <li>
+              Tested compatibility and usability across different
+              devices and setups to support a consistent user experience.
+            </li>
+
+            <li>
+              Supported performance and stress testing to evaluate
+              system behaviour under different conditions.
+            </li>
+
+            <li>
+              Assisted in logging and tracking bugs using clear and
+              detailed reports.
+            </li>
+
+            <li>
+              Participated in regression testing to verify fixes and
+              maintain system stability.
+            </li>
+
+            <li>
+              Worked alongside SQA engineers during testing,
+              troubleshooting and issue investigation.
+            </li>
+
+          </ul>
+
+        </article>
+
+
+        <!-- CHALLENGER -->
+        <article class="timeline-item">
+
+          <h3>
+            Part-Time Retail Associate
+          </h3>
+
+          <p class="company">
+            Challenger
+          </p>
+
+          <p class="date">
+            1 September 2023 – Present
+          </p>
+
+          <ul>
+
+            <li>
+              Assist customers in selecting IT products such as laptops
+              and consoles based on their needs and preferences.
+            </li>
+
+            <li>
+              Explain product features and technical specifications
+              to help customers make informed decisions.
+            </li>
+
+            <li>
+              Provide customer service support and handle general
+              enquiries efficiently.
+            </li>
+
+            <li>
+              Maintain organised product displays and support
+              day-to-day store operations.
+            </li>
+
+          </ul>
+
+        </article>
+
+
+        <!-- TUTOR -->
+        <article class="timeline-item">
+
+          <h3>
+            Part-Time Tutor
+          </h3>
+
+          <p class="company">
+            EduFirst Learning Centre
+          </p>
+
+          <p class="date">
+            August 2026 – Present
+          </p>
+
+          <ul>
+
+            <li>
+              Provide academic support to primary school students
+              in Mathematics and English.
+            </li>
+
+            <li>
+              Adapt explanations and teaching approaches to suit
+              different learning needs.
+            </li>
+
+            <li>
+              Develop communication, presentation, organisation
+              and time-management skills through teaching.
+            </li>
+
+          </ul>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+    <section id="skills" class="reveal">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          SKILLS
+        </p>
+
+        <h2>
+          Tools and technologies I work with.
+        </h2>
+
+      </div>
+
+
+      <div class="about-grid">
+
+        <article class="panel">
+
+          <h3>
+            Software & Programming
+          </h3>
+
+          <div class="tags">
+
+            <span class="tag">Python</span>
+            <span class="tag">C#</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">Matplotlib</span>
+            <span class="tag">Tableau</span>
+            <span class="tag">GitHub</span>
+            <span class="tag">Software Testing</span>
+            <span class="tag">Debugging</span>
+
+          </div>
+
+        </article>
+
+
+        <article class="panel">
+
+          <h3>
+            Cloud & Networking
+          </h3>
+
+          <div class="tags">
+
+            <span class="tag">AWS</span>
+            <span class="tag">AWS EC2</span>
+            <span class="tag">AWS RDS</span>
+            <span class="tag">AWS EFS</span>
+            <span class="tag">CCNA</span>
+            <span class="tag">Networking</span>
+
+          </div>
+
+        </article>
+
+
+        <article class="panel">
+
+          <h3>
+            Hardware & IoT
+          </h3>
+
+          <div class="tags">
+
+            <span class="tag">Arduino</span>
+            <span class="tag">ESP32</span>
+            <span class="tag">ATmega328P</span>
+            <span class="tag">MQTT</span>
+            <span class="tag">Sensors</span>
+            <span class="tag">Breadboarding</span>
+
+          </div>
+
+        </article>
+
+
+        <article class="panel">
+
+          <h3>
+            Soft Skills
+          </h3>
+
+          <div class="tags">
+
+            <span class="tag">Teamwork</span>
+            <span class="tag">Communication</span>
+            <span class="tag">Leadership</span>
+            <span class="tag">Organisation</span>
+            <span class="tag">Time Management</span>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- CERTIFICATIONS & ACTIVITIES -->
+    <section class="reveal">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          BEYOND THE CLASSROOM
+        </p>
+
+        <h2>
+          Certifications, activities & leadership.
+        </h2>
+
+      </div>
+
+
+      <div class="info-grid">
+
+
+        <article class="info-card">
+
+          <h3>
+            Certifications
+          </h3>
+
+          <ul>
+
+            <li>AWS Well-Architected Foundations</li>
+
+            <li>AWS Well-Architected Proficient</li>
+
+            <li>AWS Academy Graduate – Cloud Foundations</li>
+
+            <li>AWS Educate – Introduction to Generative AI</li>
+
+            <li>Machine Learning with Scikit-Learn – LinkedIn Learning</li>
+
+            <li>Data Cleaning in Python – LinkedIn Learning</li>
+
+            <li>Introduction to AI – LinkedIn Learning</li>
+
+            <li>CCNA: Introduction to Networks</li>
+
+            <li>CCNA: Switching, Routing, and Wireless Essentials</li>
+
+            <li>Certified Ethical Hacker (CEH) – LinkedIn Learning</li>
+
+          </ul>
+
+        </article>
+
+
+        <article class="info-card">
+
+          <h3>
+            SUSS ICT Interest Group
+          </h3>
+
+          <p class="company">
+            Subcommittee Member · Present
+          </p>
+
+          <ul>
+
+            <li>
+              Engaged with prospective students during SUSS Open House
+              by explaining ICT programmes and answering questions.
+            </li>
+
+            <li>
+              Assisted in organising an ICT career workshop.
+            </li>
+
+            <li>
+              Supported participant coordination during events.
+            </li>
+
+          </ul>
+
+        </article>
+
+
+        <article class="info-card">
+
+          <h3>
+            Yishun Secondary School
+          </h3>
+
+          <ul>
+
+            <li>
+              Prefectorial Board – Team Leader (2020–2021)
+            </li>
+
+            <li>
+              Assistant Team Leader (2019)
+            </li>
+
+            <li>
+              Led a team in supporting school events and orientation
+              programmes.
+            </li>
+
+            <li>
+              Assisted during open house events with 200+ participants.
+            </li>
+
+            <li>
+              Guided new students during orientation programmes.
+            </li>
+
+          </ul>
+
+        </article>
+
+
+        <article class="info-card">
+
+          <h3>
+            Leadership & Community
+          </h3>
+
+          <ul>
+
+            <li>
+              National Police Cadet Corps (NPCC) – Sergeant & Squad Leader.
+            </li>
+
+            <li>
+              Led and managed squad activities while developing
+              teamwork, discipline and leadership skills.
+            </li>
+
+            <li>
+              Participated in Community Service and Yellow Ribbon
+              Project activities.
+            </li>
+
+            <li>
+              Supported event operations and community outreach activities.
+            </li>
+
+          </ul>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- LANGUAGES -->
+    <section class="reveal">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          LANGUAGES
+        </p>
+
+        <h2>
+          Communication.
+        </h2>
+
+      </div>
+
+      <div class="tags">
+
+        <span class="tag">English</span>
+        <span class="tag">Tamil</span>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact" class="reveal">
+
+      <div class="contact-panel">
+
+        <p class="eyebrow">
+          LET’S CONNECT
+        </p>
+
+        <h2>
+          Open to learning opportunities.
+        </h2>
+
+        <p>
+          I am currently looking for opportunities to gain industry
+          experience in software, backend development and technology.
+        </p>
+
+        <div
+          class="actions"
+          style="justify-content: center;">
+
+          <a
+            class="button button-primary"
+            href="https://www.linkedin.com/in/sriraveena"
+            target="_blank"
+            rel="noopener">
+            LinkedIn
+          </a>
+
+          <a
+            class="button button-secondary"
+            href="https://github.com/srirav05"
+            target="_blank"
+            rel="noopener">
             GitHub
           </a>
+
         </div>
+
       </div>
+
     </section>
+
   </main>
 
-  <footer>© 2026 Sri Raveena · Built with HTML and CSS</footer>
+
+  <footer>
+    © 2026 Sri Raveena · Built with HTML and CSS
+  </footer>
+
 </body>
 </html>
