@@ -18,9 +18,13 @@
       --max-width: 1120px;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -60,8 +64,13 @@
     }
 
     @keyframes float {
-      from { transform: translate(0, 0) scale(1); }
-      to { transform: translate(55px, 45px) scale(1.16); }
+      from {
+        transform: translate(0, 0) scale(1);
+      }
+
+      to {
+        transform: translate(55px, 45px) scale(1.16);
+      }
     }
 
     nav {
@@ -84,7 +93,9 @@
       text-decoration: none;
     }
 
-    .logo span { color: var(--blue); }
+    .logo span {
+      color: var(--blue);
+    }
 
     .nav-links {
       display: flex;
@@ -102,14 +113,18 @@
       transition: color 0.2s ease;
     }
 
-    .nav-links a:hover { color: var(--blue); }
+    .nav-links a:hover {
+      color: var(--blue);
+    }
 
     .container {
       width: min(var(--max-width), calc(100% - 48px));
       margin: 0 auto;
     }
 
-    section { padding: 88px 0; }
+    section {
+      padding: 88px 0;
+    }
 
     .hero {
       display: grid;
@@ -127,7 +142,12 @@
       letter-spacing: 0.14em;
     }
 
-    h1, h2, h3, p { margin-top: 0; }
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
 
     h1 {
       margin-bottom: 22px;
@@ -137,7 +157,12 @@
     }
 
     .gradient-text {
-      background: linear-gradient(100deg, var(--blue), var(--purple), var(--cyan));
+      background: linear-gradient(
+        100deg,
+        var(--blue),
+        var(--purple),
+        var(--cyan)
+      );
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
@@ -163,7 +188,9 @@
       border-radius: 10px;
       font-weight: 700;
       text-decoration: none;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
     .button:hover {
@@ -173,7 +200,11 @@
 
     .button-primary {
       color: white;
-      background: linear-gradient(120deg, var(--blue), var(--purple));
+      background: linear-gradient(
+        120deg,
+        var(--blue),
+        var(--purple)
+      );
     }
 
     .button-secondary {
@@ -190,13 +221,19 @@
       overflow: hidden;
       border: 8px solid rgba(255, 255, 255, 0.76);
       border-radius: 32px;
-      background: linear-gradient(135deg, #a7c7ff, #d9c4ff);
+      background: linear-gradient(
+        135deg,
+        #a7c7ff,
+        #d9c4ff
+      );
       box-shadow: 0 24px 55px rgba(64, 83, 150, 0.23);
       animation: photo-float 4s ease-in-out infinite;
     }
 
     @keyframes photo-float {
-      50% { transform: translateY(-10px); }
+      50% {
+        transform: translateY(-10px);
+      }
     }
 
     .profile-photo {
@@ -266,7 +303,9 @@
       color: #31499d;
       background: #edf2ff;
       font-size: 0.88rem;
-      transition: transform 0.2s ease, background 0.2s ease;
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
     }
 
     .tag:hover {
@@ -274,7 +313,8 @@
       background: #dbe6ff;
     }
 
-    /* Project cards */
+    /* Project Cards */
+
     .project-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -288,7 +328,9 @@
       background: var(--surface);
       box-shadow: 0 12px 34px rgba(75, 93, 150, 0.08);
       backdrop-filter: blur(10px);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
     }
 
     .project-card:hover {
@@ -318,21 +360,7 @@
       color: var(--muted);
     }
 
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 18px;
-    }
-
-    .project-tag {
-      padding: 5px 9px;
-      border-radius: 999px;
-      color: #31499d;
-      background: #edf2ff;
-      font-size: 0.78rem;
-      font-weight: 600;
-    }
+    /* Timeline */
 
     .timeline {
       max-width: 900px;
@@ -385,7 +413,8 @@
       color: var(--muted);
     }
 
-    /* Two-column information cards */
+    /* Information Cards */
+
     .info-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -415,7 +444,11 @@
       padding: 52px 28px;
       border: 1px solid var(--border);
       border-radius: 22px;
-      background: linear-gradient(135deg, #e6efff, #f2eaff);
+      background: linear-gradient(
+        135deg,
+        #e6efff,
+        #f2eaff
+      );
       text-align: center;
       box-shadow: 0 12px 34px rgba(75, 93, 150, 0.08);
     }
@@ -436,6 +469,8 @@
       text-align: center;
     }
 
+    /* Animation */
+
     .reveal {
       animation: reveal 0.8s ease both;
     }
@@ -452,9 +487,17 @@
       }
     }
 
+    /* Mobile */
+
     @media (max-width: 760px) {
-      .nav-links { gap: 12px; }
-      .nav-links a { font-size: 0.8rem; }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .nav-links a {
+        font-size: 0.8rem;
+      }
 
       .hero {
         grid-template-columns: 1fr;
@@ -474,39 +517,73 @@
         grid-template-columns: 1fr;
       }
 
-      section { padding: 65px 0; }
+      section {
+        padding: 65px 0;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
+
+      *,
+      *::before,
+      *::after {
         scroll-behavior: auto !important;
         animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
       }
+
     }
   </style>
 </head>
 
 <body>
 
+  <!-- Background Orbs -->
   <div class="orb orb-one"></div>
   <div class="orb orb-two"></div>
 
+
+  <!-- NAVIGATION -->
   <nav>
-    <a class="logo" href="#top">SRI<span>.</span></a>
+
+    <a class="logo" href="#top">
+      SRI<span>.</span>
+    </a>
 
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
+
+      <li>
+        <a href="#about">About</a>
+      </li>
+
+      <li>
+        <a href="#projects">Projects</a>
+      </li>
+
+      <li>
+        <a href="#experience">Experience</a>
+      </li>
+
+      <li>
+        <a href="#skills">Skills</a>
+      </li>
+
+      <li>
+        <a href="#contact">Contact</a>
+      </li>
+
     </ul>
+
   </nav>
+
 
   <main id="top" class="container">
 
+
+    <!-- ========================= -->
     <!-- HERO -->
+    <!-- ========================= -->
+
     <section class="hero">
 
       <div class="reveal">
@@ -516,7 +593,10 @@
         </p>
 
         <h1>
-          Hi, I’m <span class="gradient-text">Sri Raveena.</span>
+          Hi, I’m
+          <span class="gradient-text">
+            Sri Raveena.
+          </span>
         </h1>
 
         <p class="intro">
@@ -528,7 +608,9 @@
 
         <div class="actions">
 
-          <a class="button button-primary" href="#projects">
+          <a
+            class="button button-primary"
+            href="#projects">
             View my projects
           </a>
 
@@ -543,6 +625,9 @@
         </div>
 
       </div>
+
+
+      <!-- PROFILE PHOTO -->
 
       <div class="photo-card reveal">
 
@@ -560,7 +645,10 @@
     </section>
 
 
+    <!-- ========================= -->
     <!-- ABOUT -->
+    <!-- ========================= -->
+
     <section id="about" class="reveal">
 
       <div class="section-heading">
@@ -585,6 +673,9 @@
 
       <div class="about-grid">
 
+
+        <!-- MY FOCUS -->
+
         <article class="panel">
 
           <h3>
@@ -608,6 +699,8 @@
         </article>
 
 
+        <!-- EDUCATION -->
+
         <article class="panel">
 
           <h3>
@@ -615,20 +708,32 @@
           </h3>
 
           <p>
-            <strong>Bachelor's Degree in Information and Communication Technology</strong><br>
-            Singapore University of Social Sciences<br>
+            <strong>
+              Bachelor's Degree in Information and Communication Technology
+            </strong>
+            <br>
+            Singapore University of Social Sciences
+            <br>
             2025 – 2029
           </p>
 
           <p>
-            <strong>Diploma in Electronics and Computer Engineering</strong><br>
-            Ngee Ann Polytechnic<br>
+            <strong>
+              Diploma in Electronics and Computer Engineering
+            </strong>
+            <br>
+            Ngee Ann Polytechnic
+            <br>
             2022 – 2025
           </p>
 
           <p>
-            <strong>O-Level</strong><br>
-            Yishun Secondary School<br>
+            <strong>
+              O-Level
+            </strong>
+            <br>
+            Yishun Secondary School
+            <br>
             2018 – 2021
           </p>
 
@@ -639,7 +744,10 @@
     </section>
 
 
+    <!-- ========================= -->
     <!-- PROJECTS -->
+    <!-- ========================= -->
+
     <section id="projects" class="reveal">
 
       <div class="section-heading">
@@ -654,7 +762,7 @@
 
         <p>
           A selection of university and personal projects where I apply
-          programming, data and problem-solving skills to practical use cases.
+          programming and problem-solving skills to practical use cases.
         </p>
 
       </div>
@@ -664,6 +772,7 @@
 
 
         <!-- SUSS MODULE REVIEWS -->
+
         <article class="project-card">
 
           <h3>
@@ -687,7 +796,7 @@
             </li>
 
             <li>
-              Designed a structured database to store module information
+              Designed a structured system to store module information
               and student reviews.
             </li>
 
@@ -697,8 +806,8 @@
             </li>
 
             <li>
-              Worked on the backend and database structure to manage
-              application data.
+              Worked on managing application data and improving the
+              overall user experience.
             </li>
 
             <li>
@@ -713,72 +822,60 @@
 
           </ul>
 
-          <div class="project-tags">
-
-            <span class="project-tag">Python</span>
-            <span class="project-tag">Backend</span>
-            <span class="project-tag">Database</span>
-            <span class="project-tag">Web Development</span>
-            <span class="project-tag">GitHub</span>
-
-          </div>
-
         </article>
 
 
-        <!-- LIBRARY -->
+        <!-- AI INTERNSHIP MATCHER -->
+
         <article class="project-card">
 
           <h3>
-            Library Management System
+            AI Internship Matcher
           </h3>
 
           <p class="project-type">
-            University Project · Python
+            Personal Project · In Progress
           </p>
 
           <p>
-            A console-based Library Management System developed to apply
-            programming and data structure concepts.
+            An AI-powered internship matching platform that helps students
+            discover internship opportunities that best match their
+            interests, skills and career goals.
           </p>
 
           <ul>
 
             <li>
-              Developed the system using Python.
+              Designed a platform that recommends suitable internship
+              opportunities.
             </li>
 
             <li>
-              Implemented data structures to manage library records.
+              Created an interface for students to enter their interests
+              and preferences.
             </li>
 
             <li>
-              Added functionality for managing books and borrowing records.
+              Focused on making internship discovery simpler and
+              more personalised.
             </li>
 
             <li>
-              Implemented book borrowing and return operations.
+              Continuing to improve the project by adding new features
+              and refining the user experience.
             </li>
 
             <li>
-              Applied programming logic and problem-solving techniques
-              to organise and retrieve information.
+              Using GitHub to manage development and track progress.
             </li>
 
           </ul>
 
-          <div class="project-tags">
-
-            <span class="project-tag">Python</span>
-            <span class="project-tag">Data Structures</span>
-            <span class="project-tag">Programming</span>
-
-          </div>
-
         </article>
 
 
-        <!-- AI CHALLENGE -->
+        <!-- AI SECURITY INCIDENT ASSISTANT -->
+
         <article class="project-card">
 
           <h3>
@@ -798,43 +895,32 @@
           <ul>
 
             <li>
-              Used Python to develop and test the solution.
+              Developed and tested an AI-assisted solution for
+              security scenarios.
             </li>
 
             <li>
-              Applied prompt engineering and model tuning techniques.
+              Designed the system to process alerts, logs and
+              simulated incidents.
             </li>
 
             <li>
-              Designed the system to process information such as alerts,
-              logs and simulated scenarios.
+              Worked collaboratively on system development,
+              testing and refinement.
             </li>
 
             <li>
-              Worked collaboratively on system development, testing and
-              refinement.
-            </li>
-
-            <li>
-              Presented the solution through a live demonstration and
-              supporting documentation.
+              Presented the solution through a live demonstration
+              and supporting documentation.
             </li>
 
           </ul>
 
-          <div class="project-tags">
-
-            <span class="project-tag">Python</span>
-            <span class="project-tag">AI</span>
-            <span class="project-tag">Prompt Engineering</span>
-            <span class="project-tag">Team Project</span>
-
-          </div>
-
         </article>
 
 
-        <!-- ELECTRONICS BACKGROUND -->
+        <!-- ELECTRONICS & IOT -->
+
         <article class="project-card">
 
           <h3>
@@ -846,40 +932,27 @@
           </p>
 
           <p>
-            Developed hands-on experience with microcontrollers, sensors,
-            electronics and IoT systems during my Diploma in Electronics
-            and Computer Engineering.
+            Developed hands-on experience with electronics and IoT
+            systems during my Diploma in Electronics and Computer Engineering.
           </p>
 
           <ul>
 
             <li>
-              Worked with Arduino UNO, ATmega328P and ESP32 boards.
+              Built sensor-based projects involving different
+              electronic components.
             </li>
 
             <li>
-              Built sensor-based and IoT systems involving LEDs, buttons,
-              potentiometers and other components.
+              Worked on IoT systems and practical hardware projects.
             </li>
 
             <li>
-              Worked with MQTT communication and IoT platforms.
-            </li>
-
-            <li>
-              Applied embedded programming and hardware troubleshooting.
+              Applied troubleshooting techniques while developing
+              and testing prototypes.
             </li>
 
           </ul>
-
-          <div class="project-tags">
-
-            <span class="project-tag">Arduino</span>
-            <span class="project-tag">ESP32</span>
-            <span class="project-tag">IoT</span>
-            <span class="project-tag">MQTT</span>
-
-          </div>
 
         </article>
 
@@ -888,7 +961,10 @@
     </section>
 
 
+    <!-- ========================= -->
     <!-- EXPERIENCE -->
+    <!-- ========================= -->
+
     <section id="experience" class="reveal">
 
       <div class="section-heading">
@@ -907,7 +983,8 @@
       <div class="timeline">
 
 
-        <!-- CREATIVE -->
+        <!-- CREATIVE TECHNOLOGY -->
+
         <article class="timeline-item">
 
           <h3>
@@ -967,6 +1044,7 @@
 
 
         <!-- CHALLENGER -->
+
         <article class="timeline-item">
 
           <h3>
@@ -1009,6 +1087,7 @@
 
 
         <!-- TUTOR -->
+
         <article class="timeline-item">
 
           <h3>
@@ -1049,7 +1128,10 @@
     </section>
 
 
+    <!-- ========================= -->
     <!-- SKILLS -->
+    <!-- ========================= -->
+
     <section id="skills" class="reveal">
 
       <div class="section-heading">
@@ -1059,7 +1141,7 @@
         </p>
 
         <h2>
-          Tools and technologies I work with.
+          Tools and skills I work with.
         </h2>
 
       </div>
@@ -1067,67 +1149,74 @@
 
       <div class="about-grid">
 
+
+        <!-- SOFTWARE -->
+
         <article class="panel">
 
           <h3>
-            Software & Programming
+            Software
           </h3>
 
           <div class="tags">
 
-            <span class="tag">Python</span>
-            <span class="tag">C#</span>
-            <span class="tag">Pandas</span>
-            <span class="tag">Matplotlib</span>
-            <span class="tag">Tableau</span>
-            <span class="tag">GitHub</span>
-            <span class="tag">Software Testing</span>
-            <span class="tag">Debugging</span>
+            <span class="tag">
+              Python
+            </span>
+
+            <span class="tag">
+              C#
+            </span>
+
+            <span class="tag">
+              Tableau
+            </span>
+
+            <span class="tag">
+              Matplotlib
+            </span>
+
+            <span class="tag">
+              Pandas
+            </span>
+
+            <span class="tag">
+              AWS
+            </span>
+
+            <span class="tag">
+              HTML & CSS
+            </span>
 
           </div>
 
         </article>
 
 
+        <!-- HARDWARE -->
+
         <article class="panel">
 
           <h3>
-            Cloud & Networking
+            Hardware
           </h3>
 
           <div class="tags">
 
-            <span class="tag">AWS</span>
-            <span class="tag">AWS EC2</span>
-            <span class="tag">AWS RDS</span>
-            <span class="tag">AWS EFS</span>
-            <span class="tag">CCNA</span>
-            <span class="tag">Networking</span>
+            <span class="tag">
+              Arduino
+            </span>
+
+            <span class="tag">
+              Breadboarding
+            </span>
 
           </div>
 
         </article>
 
 
-        <article class="panel">
-
-          <h3>
-            Hardware & IoT
-          </h3>
-
-          <div class="tags">
-
-            <span class="tag">Arduino</span>
-            <span class="tag">ESP32</span>
-            <span class="tag">ATmega328P</span>
-            <span class="tag">MQTT</span>
-            <span class="tag">Sensors</span>
-            <span class="tag">Breadboarding</span>
-
-          </div>
-
-        </article>
-
+        <!-- SOFT SKILLS -->
 
         <article class="panel">
 
@@ -1137,11 +1226,21 @@
 
           <div class="tags">
 
-            <span class="tag">Teamwork</span>
-            <span class="tag">Communication</span>
-            <span class="tag">Leadership</span>
-            <span class="tag">Organisation</span>
-            <span class="tag">Time Management</span>
+            <span class="tag">
+              Team Player
+            </span>
+
+            <span class="tag">
+              Organizational Skills
+            </span>
+
+            <span class="tag">
+              Communication Skills
+            </span>
+
+            <span class="tag">
+              Leadership Skills
+            </span>
 
           </div>
 
@@ -1152,7 +1251,10 @@
     </section>
 
 
+    <!-- ========================= -->
     <!-- CERTIFICATIONS & ACTIVITIES -->
+    <!-- ========================= -->
+
     <section class="reveal">
 
       <div class="section-heading">
@@ -1171,6 +1273,8 @@
       <div class="info-grid">
 
 
+        <!-- CERTIFICATIONS -->
+
         <article class="info-card">
 
           <h3>
@@ -1179,30 +1283,52 @@
 
           <ul>
 
-            <li>AWS Well-Architected Foundations</li>
+            <li>
+              AWS Well-Architected Foundations
+            </li>
 
-            <li>AWS Well-Architected Proficient</li>
+            <li>
+              AWS Well-Architected Proficient
+            </li>
 
-            <li>AWS Academy Graduate – Cloud Foundations</li>
+            <li>
+              AWS Academy Graduate – Cloud Foundations
+            </li>
 
-            <li>AWS Educate – Introduction to Generative AI</li>
+            <li>
+              AWS Educate – Introduction to Generative AI
+            </li>
 
-            <li>Machine Learning with Scikit-Learn – LinkedIn Learning</li>
+            <li>
+              Machine Learning with Scikit-Learn – LinkedIn Learning
+            </li>
 
-            <li>Data Cleaning in Python – LinkedIn Learning</li>
+            <li>
+              Data Cleaning in Python – LinkedIn Learning
+            </li>
 
-            <li>Introduction to AI – LinkedIn Learning</li>
+            <li>
+              Introduction to AI – LinkedIn Learning
+            </li>
 
-            <li>CCNA: Introduction to Networks</li>
+            <li>
+              CCNA: Introduction to Networks
+            </li>
 
-            <li>CCNA: Switching, Routing, and Wireless Essentials</li>
+            <li>
+              CCNA: Switching, Routing, and Wireless Essentials
+            </li>
 
-            <li>Certified Ethical Hacker (CEH) – LinkedIn Learning</li>
+            <li>
+              Certified Ethical Hacker (CEH) – LinkedIn Learning
+            </li>
 
           </ul>
 
         </article>
 
+
+        <!-- SUSS ICT INTEREST GROUP -->
 
         <article class="info-card">
 
@@ -1233,6 +1359,8 @@
 
         </article>
 
+
+        <!-- YISHUN SECONDARY SCHOOL -->
 
         <article class="info-card">
 
@@ -1267,6 +1395,8 @@
 
         </article>
 
+
+        <!-- LEADERSHIP & COMMUNITY -->
 
         <article class="info-card">
 
@@ -1303,7 +1433,10 @@
     </section>
 
 
+    <!-- ========================= -->
     <!-- LANGUAGES -->
+    <!-- ========================= -->
+
     <section class="reveal">
 
       <div class="section-heading">
@@ -1320,15 +1453,23 @@
 
       <div class="tags">
 
-        <span class="tag">English</span>
-        <span class="tag">Tamil</span>
+        <span class="tag">
+          English
+        </span>
+
+        <span class="tag">
+          Tamil
+        </span>
 
       </div>
 
     </section>
 
 
+    <!-- ========================= -->
     <!-- CONTACT -->
+    <!-- ========================= -->
+
     <section id="contact" class="reveal">
 
       <div class="contact-panel">
@@ -1375,9 +1516,14 @@
   </main>
 
 
+  <!-- ========================= -->
+  <!-- FOOTER -->
+  <!-- ========================= -->
+
   <footer>
     © 2026 Sri Raveena · Built with HTML and CSS
   </footer>
+
 
 </body>
 </html>
