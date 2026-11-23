@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -126,12 +127,14 @@
       padding: 88px 0;
     }
 
+    /* Hero - Photo Removed */
+
     .hero {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1fr;
       align-items: center;
-      gap: 64px;
-      min-height: 80vh;
+      min-height: 65vh;
+      padding: 90px 0;
     }
 
     .eyebrow {
@@ -211,51 +214,6 @@
       border-color: var(--border);
       color: var(--ink);
       background: rgba(255, 255, 255, 0.66);
-    }
-
-    .photo-card {
-      position: relative;
-      width: min(100%, 360px);
-      aspect-ratio: 1;
-      justify-self: end;
-      overflow: hidden;
-      border: 8px solid rgba(255, 255, 255, 0.76);
-      border-radius: 32px;
-      background: linear-gradient(
-        135deg,
-        #a7c7ff,
-        #d9c4ff
-      );
-      box-shadow: 0 24px 55px rgba(64, 83, 150, 0.23);
-      animation: photo-float 4s ease-in-out infinite;
-    }
-
-    @keyframes photo-float {
-      50% {
-        transform: translateY(-10px);
-      }
-    }
-
-    .profile-photo {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .photo-label {
-      position: absolute;
-      right: 16px;
-      bottom: 16px;
-      margin: 0;
-      padding: 7px 11px;
-      border-radius: 999px;
-      color: white;
-      background: rgba(24, 35, 63, 0.72);
-      font-size: 0.8rem;
-      font-weight: 700;
-      backdrop-filter: blur(6px);
     }
 
     .section-heading {
@@ -490,9 +448,9 @@
     /* Mobile */
 
     @media (max-width: 760px) {
-
       .nav-links {
         gap: 12px;
+        flex-wrap: wrap;
       }
 
       .nav-links a {
@@ -501,14 +459,8 @@
 
       .hero {
         grid-template-columns: 1fr;
-        gap: 42px;
         min-height: auto;
         padding: 70px 0;
-      }
-
-      .photo-card {
-        width: min(100%, 310px);
-        justify-self: start;
       }
 
       .about-grid,
@@ -523,7 +475,6 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-
       *,
       *::before,
       *::after {
@@ -531,7 +482,6 @@
         animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
       }
-
     }
   </style>
 </head>
@@ -542,50 +492,25 @@
   <div class="orb orb-one"></div>
   <div class="orb orb-two"></div>
 
-
   <!-- NAVIGATION -->
   <nav>
-
     <a class="logo" href="#top">
       SRI<span>.</span>
     </a>
 
     <ul class="nav-links">
-
-      <li>
-        <a href="#about">About</a>
-      </li>
-
-      <li>
-        <a href="#projects">Projects</a>
-      </li>
-
-      <li>
-        <a href="#experience">Experience</a>
-      </li>
-
-      <li>
-        <a href="#skills">Skills</a>
-      </li>
-
-      <li>
-        <a href="#contact">Contact</a>
-      </li>
-
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-
   </nav>
-
 
   <main id="top" class="container">
 
-
-    <!-- ========================= -->
-    <!-- HERO -->
-    <!-- ========================= -->
-
+    <!-- HERO SECTION -->
     <section class="hero">
-
       <div class="reveal">
 
         <p class="eyebrow">
@@ -607,10 +532,7 @@
         </p>
 
         <div class="actions">
-
-          <a
-            class="button button-primary"
-            href="#projects">
+          <a class="button button-primary" href="#projects">
             View my projects
           </a>
 
@@ -621,45 +543,18 @@
             rel="noopener">
             LinkedIn
           </a>
-
         </div>
 
       </div>
-
-
-      <!-- PROFILE PHOTO -->
-
-      <div class="photo-card reveal">
-
-        <img
-          class="profile-photo"
-          src="profile.jpg"
-          alt="Portrait of Sri Raveena">
-
-        <p class="photo-label">
-          Sri Raveena
-        </p>
-
-      </div>
-
     </section>
 
-
-    <!-- ========================= -->
-    <!-- ABOUT -->
-    <!-- ========================= -->
-
+    <!-- ABOUT SECTION -->
     <section id="about" class="reveal">
 
       <div class="section-heading">
+        <p class="eyebrow">ABOUT ME</p>
 
-        <p class="eyebrow">
-          ABOUT ME
-        </p>
-
-        <h2>
-          Learning by building useful things.
-        </h2>
+        <h2>Learning by building useful things.</h2>
 
         <p>
           I am currently pursuing a Bachelor’s Degree in Information and
@@ -667,20 +562,12 @@
           Sciences. I enjoy working on practical technology projects and
           exploring how software can solve real problems.
         </p>
-
       </div>
-
 
       <div class="about-grid">
 
-
-        <!-- MY FOCUS -->
-
         <article class="panel">
-
-          <h3>
-            My focus
-          </h3>
+          <h3>My focus</h3>
 
           <p>
             I am particularly interested in software and backend development,
@@ -695,17 +582,10 @@
             testing processes, debugging and working with engineers to
             identify and resolve issues.
           </p>
-
         </article>
 
-
-        <!-- EDUCATION -->
-
         <article class="panel">
-
-          <h3>
-            Education
-          </h3>
+          <h3>Education</h3>
 
           <p>
             <strong>
@@ -728,56 +608,35 @@
           </p>
 
           <p>
-            <strong>
-              O-Level
-            </strong>
+            <strong>O-Level</strong>
             <br>
             Yishun Secondary School
             <br>
             2018 – 2021
           </p>
-
         </article>
 
       </div>
-
     </section>
 
-
-    <!-- ========================= -->
-    <!-- PROJECTS -->
-    <!-- ========================= -->
-
+    <!-- PROJECTS SECTION -->
     <section id="projects" class="reveal">
 
       <div class="section-heading">
-
-        <p class="eyebrow">
-          PROJECTS
-        </p>
-
-        <h2>
-          Things I’ve built.
-        </h2>
+        <p class="eyebrow">PROJECTS</p>
+        <h2>Things I’ve built.</h2>
 
         <p>
           A selection of university and personal projects where I apply
           programming and problem-solving skills to practical use cases.
         </p>
-
       </div>
-
 
       <div class="project-grid">
 
-
         <!-- SUSS MODULE REVIEWS -->
-
         <article class="project-card">
-
-          <h3>
-            SUSS Module Reviews
-          </h3>
+          <h3>SUSS Module Reviews</h3>
 
           <p class="project-type">
             Web Application · Personal Project
@@ -790,7 +649,6 @@
           </p>
 
           <ul>
-
             <li>
               Built a platform for students to browse and review SUSS modules.
             </li>
@@ -819,19 +677,12 @@
               Used GitHub throughout development for project management
               and version control.
             </li>
-
           </ul>
-
         </article>
 
-
         <!-- AI INTERNSHIP MATCHER -->
-
         <article class="project-card">
-
-          <h3>
-            AI Internship Matcher
-          </h3>
+          <h3>AI Internship Matcher</h3>
 
           <p class="project-type">
             Personal Project · In Progress
@@ -844,7 +695,6 @@
           </p>
 
           <ul>
-
             <li>
               Designed a platform that recommends suitable internship
               opportunities.
@@ -868,19 +718,12 @@
             <li>
               Using GitHub to manage development and track progress.
             </li>
-
           </ul>
-
         </article>
 
-
         <!-- AI SECURITY INCIDENT ASSISTANT -->
-
         <article class="project-card">
-
-          <h3>
-            AI Security Incident Assistant
-          </h3>
+          <h3>AI Security Incident Assistant</h3>
 
           <p class="project-type">
             National AI Student Challenge 2026 · Certis Track
@@ -893,7 +736,6 @@
           </p>
 
           <ul>
-
             <li>
               Developed and tested an AI-assisted solution for
               security scenarios.
@@ -913,19 +755,12 @@
               Presented the solution through a live demonstration
               and supporting documentation.
             </li>
-
           </ul>
-
         </article>
 
-
         <!-- ELECTRONICS & IOT -->
-
         <article class="project-card">
-
-          <h3>
-            Electronics & IoT Projects
-          </h3>
+          <h3>Electronics & IoT Projects</h3>
 
           <p class="project-type">
             Ngee Ann Polytechnic · Hardware & IoT
@@ -937,7 +772,6 @@
           </p>
 
           <ul>
-
             <li>
               Built sensor-based projects involving different
               electronic components.
@@ -951,56 +785,33 @@
               Applied troubleshooting techniques while developing
               and testing prototypes.
             </li>
-
           </ul>
-
         </article>
 
       </div>
-
     </section>
 
-
-    <!-- ========================= -->
-    <!-- EXPERIENCE -->
-    <!-- ========================= -->
-
+    <!-- EXPERIENCE SECTION -->
     <section id="experience" class="reveal">
 
       <div class="section-heading">
-
-        <p class="eyebrow">
-          EXPERIENCE
-        </p>
-
-        <h2>
-          Learning from real work.
-        </h2>
-
+        <p class="eyebrow">EXPERIENCE</p>
+        <h2>Learning from real work.</h2>
       </div>
-
 
       <div class="timeline">
 
-
         <!-- CREATIVE TECHNOLOGY -->
-
         <article class="timeline-item">
+          <h3>Software Quality Assurance Engineer</h3>
 
-          <h3>
-            Software Quality Assurance Engineer
-          </h3>
-
-          <p class="company">
-            Creative Technology Ltd
-          </p>
+          <p class="company">Creative Technology Ltd</p>
 
           <p class="date">
             4 March 2024 – 3 August 2024
           </p>
 
           <ul>
-
             <li>
               Assisted in designing and executing test cases for the
               Creative BT-W6 project, covering functional, integration
@@ -1037,30 +848,20 @@
               Worked alongside SQA engineers during testing,
               troubleshooting and issue investigation.
             </li>
-
           </ul>
-
         </article>
 
-
         <!-- CHALLENGER -->
-
         <article class="timeline-item">
+          <h3>Part-Time Retail Associate</h3>
 
-          <h3>
-            Part-Time Retail Associate
-          </h3>
-
-          <p class="company">
-            Challenger
-          </p>
+          <p class="company">Challenger</p>
 
           <p class="date">
             1 September 2023 – Present
           </p>
 
           <ul>
-
             <li>
               Assist customers in selecting IT products such as laptops
               and consoles based on their needs and preferences.
@@ -1080,30 +881,20 @@
               Maintain organised product displays and support
               day-to-day store operations.
             </li>
-
           </ul>
-
         </article>
 
-
         <!-- TUTOR -->
-
         <article class="timeline-item">
+          <h3>Part-Time Tutor</h3>
 
-          <h3>
-            Part-Time Tutor
-          </h3>
-
-          <p class="company">
-            EduFirst Learning Centre
-          </p>
+          <p class="company">EduFirst Learning Centre</p>
 
           <p class="date">
             August 2026 – Present
           </p>
 
           <ul>
-
             <li>
               Provide academic support to primary school students
               in Mathematics and English.
@@ -1118,230 +909,102 @@
               Develop communication, presentation, organisation
               and time-management skills through teaching.
             </li>
-
           </ul>
-
         </article>
 
       </div>
-
     </section>
 
-
-    <!-- ========================= -->
-    <!-- SKILLS -->
-    <!-- ========================= -->
-
+    <!-- SKILLS SECTION -->
     <section id="skills" class="reveal">
 
       <div class="section-heading">
-
-        <p class="eyebrow">
-          SKILLS
-        </p>
-
-        <h2>
-          Tools and skills I work with.
-        </h2>
-
+        <p class="eyebrow">SKILLS</p>
+        <h2>Tools and skills I work with.</h2>
       </div>
-
 
       <div class="about-grid">
 
-
         <!-- SOFTWARE -->
-
         <article class="panel">
-
-          <h3>
-            Software
-          </h3>
+          <h3>Software</h3>
 
           <div class="tags">
-
-            <span class="tag">
-              Python
-            </span>
-
-            <span class="tag">
-              C#
-            </span>
-
-            <span class="tag">
-              Tableau
-            </span>
-
-            <span class="tag">
-              Matplotlib
-            </span>
-
-            <span class="tag">
-              Pandas
-            </span>
-
-            <span class="tag">
-              AWS
-            </span>
-
-            <span class="tag">
-              HTML & CSS
-            </span>
-
+            <span class="tag">Python</span>
+            <span class="tag">C#</span>
+            <span class="tag">Tableau</span>
+            <span class="tag">Matplotlib</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">AWS</span>
+            <span class="tag">HTML & CSS</span>
           </div>
-
         </article>
-
 
         <!-- HARDWARE -->
-
         <article class="panel">
-
-          <h3>
-            Hardware
-          </h3>
+          <h3>Hardware</h3>
 
           <div class="tags">
-
-            <span class="tag">
-              Arduino
-            </span>
-
-            <span class="tag">
-              Breadboarding
-            </span>
-
+            <span class="tag">Arduino</span>
+            <span class="tag">Breadboarding</span>
           </div>
-
         </article>
 
-
         <!-- SOFT SKILLS -->
-
         <article class="panel">
-
-          <h3>
-            Soft Skills
-          </h3>
+          <h3>Soft Skills</h3>
 
           <div class="tags">
-
-            <span class="tag">
-              Team Player
-            </span>
-
-            <span class="tag">
-              Organizational Skills
-            </span>
-
-            <span class="tag">
-              Communication Skills
-            </span>
-
-            <span class="tag">
-              Leadership Skills
-            </span>
-
+            <span class="tag">Team Player</span>
+            <span class="tag">Organizational Skills</span>
+            <span class="tag">Communication Skills</span>
+            <span class="tag">Leadership Skills</span>
           </div>
-
         </article>
 
       </div>
-
     </section>
 
-
-    <!-- ========================= -->
     <!-- CERTIFICATIONS & ACTIVITIES -->
-    <!-- ========================= -->
-
     <section class="reveal">
 
       <div class="section-heading">
-
-        <p class="eyebrow">
-          BEYOND THE CLASSROOM
-        </p>
+        <p class="eyebrow">BEYOND THE CLASSROOM</p>
 
         <h2>
           Certifications, activities & leadership.
         </h2>
-
       </div>
-
 
       <div class="info-grid">
 
-
         <!-- CERTIFICATIONS -->
-
         <article class="info-card">
-
-          <h3>
-            Certifications
-          </h3>
+          <h3>Certifications</h3>
 
           <ul>
-
-            <li>
-              AWS Well-Architected Foundations
-            </li>
-
-            <li>
-              AWS Well-Architected Proficient
-            </li>
-
-            <li>
-              AWS Academy Graduate – Cloud Foundations
-            </li>
-
-            <li>
-              AWS Educate – Introduction to Generative AI
-            </li>
-
-            <li>
-              Machine Learning with Scikit-Learn – LinkedIn Learning
-            </li>
-
-            <li>
-              Data Cleaning in Python – LinkedIn Learning
-            </li>
-
-            <li>
-              Introduction to AI – LinkedIn Learning
-            </li>
-
-            <li>
-              CCNA: Introduction to Networks
-            </li>
-
-            <li>
-              CCNA: Switching, Routing, and Wireless Essentials
-            </li>
-
-            <li>
-              Certified Ethical Hacker (CEH) – LinkedIn Learning
-            </li>
-
+            <li>AWS Well-Architected Foundations</li>
+            <li>AWS Well-Architected Proficient</li>
+            <li>AWS Academy Graduate – Cloud Foundations</li>
+            <li>AWS Educate – Introduction to Generative AI</li>
+            <li>Machine Learning with Scikit-Learn – LinkedIn Learning</li>
+            <li>Data Cleaning in Python – LinkedIn Learning</li>
+            <li>Introduction to AI – LinkedIn Learning</li>
+            <li>CCNA: Introduction to Networks</li>
+            <li>CCNA: Switching, Routing, and Wireless Essentials</li>
+            <li>Certified Ethical Hacker (CEH) – LinkedIn Learning</li>
           </ul>
-
         </article>
 
-
         <!-- SUSS ICT INTEREST GROUP -->
-
         <article class="info-card">
-
-          <h3>
-            SUSS ICT Interest Group
-          </h3>
+          <h3>SUSS ICT Interest Group</h3>
 
           <p class="company">
             Subcommittee Member · Present
           </p>
 
           <ul>
-
             <li>
               Engaged with prospective students during SUSS Open House
               by explaining ICT programmes and answering questions.
@@ -1354,22 +1017,14 @@
             <li>
               Supported participant coordination during events.
             </li>
-
           </ul>
-
         </article>
 
-
         <!-- YISHUN SECONDARY SCHOOL -->
-
         <article class="info-card">
-
-          <h3>
-            Yishun Secondary School
-          </h3>
+          <h3>Yishun Secondary School</h3>
 
           <ul>
-
             <li>
               Prefectorial Board – Team Leader (2020–2021)
             </li>
@@ -1390,22 +1045,14 @@
             <li>
               Guided new students during orientation programmes.
             </li>
-
           </ul>
-
         </article>
 
-
         <!-- LEADERSHIP & COMMUNITY -->
-
         <article class="info-card">
-
-          <h3>
-            Leadership & Community
-          </h3>
+          <h3>Leadership & Community</h3>
 
           <ul>
-
             <li>
               National Police Cadet Corps (NPCC) – Sergeant & Squad Leader.
             </li>
@@ -1423,64 +1070,35 @@
             <li>
               Supported event operations and community outreach activities.
             </li>
-
           </ul>
-
         </article>
 
       </div>
-
     </section>
 
-
-    <!-- ========================= -->
-    <!-- LANGUAGES -->
-    <!-- ========================= -->
-
+    <!-- LANGUAGES SECTION -->
     <section class="reveal">
 
       <div class="section-heading">
-
-        <p class="eyebrow">
-          LANGUAGES
-        </p>
-
-        <h2>
-          Communication.
-        </h2>
-
+        <p class="eyebrow">LANGUAGES</p>
+        <h2>Communication.</h2>
       </div>
 
       <div class="tags">
-
-        <span class="tag">
-          English
-        </span>
-
-        <span class="tag">
-          Tamil
-        </span>
-
+        <span class="tag">English</span>
+        <span class="tag">Tamil</span>
       </div>
 
     </section>
 
-
-    <!-- ========================= -->
-    <!-- CONTACT -->
-    <!-- ========================= -->
-
+    <!-- CONTACT SECTION -->
     <section id="contact" class="reveal">
 
       <div class="contact-panel">
 
-        <p class="eyebrow">
-          LET’S CONNECT
-        </p>
+        <p class="eyebrow">LET’S CONNECT</p>
 
-        <h2>
-          Open to learning opportunities.
-        </h2>
+        <h2>Open to learning opportunities.</h2>
 
         <p>
           I am currently looking for opportunities to gain industry
@@ -1510,20 +1128,14 @@
         </div>
 
       </div>
-
     </section>
 
   </main>
 
-
-  <!-- ========================= -->
   <!-- FOOTER -->
-  <!-- ========================= -->
-
   <footer>
     © 2026 Sri Raveena · Built with HTML and CSS
   </footer>
-
 
 </body>
 </html>
